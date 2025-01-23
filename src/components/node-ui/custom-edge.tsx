@@ -1,8 +1,21 @@
 import React from "react";
-import { type EdgeProps, getBezierPath } from "@xyflow/react";
+import { BaseEdge, type EdgeProps, getBezierPath } from "@xyflow/react";
+
+const CustomMarker = () => (
+  <marker
+    id="custom-arrow"
+    viewBox="0 0 4 4"
+    markerWidth="4"
+    markerHeight="4"
+    refX="4"
+    refY="2"
+    orient="auto"
+  >
+    <path d="M 0 0 L 4 2 L 0 4 Z" fill="#525D73" />
+  </marker>
+);
 
 const CustomEdge = ({
-  id,
   sourceX,
   sourceY,
   targetX,
@@ -21,29 +34,20 @@ const CustomEdge = ({
   });
 
   return (
-    <g>
-      <path
-        id={id}
-        className="react-flow__edge-path"
-        d={edgePath}
-        fill="none"
-        stroke="#b1b1b7"
-        strokeWidth={2}
-        style={style}
+    <>
+      <defs>
+        <CustomMarker />
+      </defs>
+      <BaseEdge
+        path={edgePath}
+        markerEnd="url(#custom-arrow)"
+        style={{
+          ...style,
+          stroke: "#525D73",
+          strokeWidth: 1,
+        }}
       />
-      <foreignObject
-        width={20}
-        height={20}
-        x={targetX - 10}
-        y={targetY - 10}
-        className="react-flow__edge-text"
-        requiredExtensions="http://www.w3.org/1999/xhtml"
-      >
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500">
-          <div className="text-xs font-bold text-white">→</div>
-        </div>
-      </foreignObject>
-    </g>
+    </>
   );
 };
 

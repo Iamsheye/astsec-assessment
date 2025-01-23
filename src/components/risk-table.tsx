@@ -8,7 +8,7 @@ const RiskTable = () => {
   ];
 
   return (
-    <table className="w-max border-separate border-spacing-0 rounded-lg border border-gray-soft-100 bg-white">
+    <table className="w-full border-separate border-spacing-0 rounded-lg border border-gray-soft-100 bg-white">
       <thead className="">
         <tr>
           {["Asset", "Contextual Risk"].map((header) => (
@@ -46,7 +46,7 @@ const RiskTable = () => {
         <tr>
           <td className="flex w-[175%] items-center justify-center py-3">
             <button className="">
-              <ChevronLeft className="text-gray-soft-200 h-5 w-5" />
+              <ChevronLeft className="h-5 w-5 text-gray-soft-200" />
             </button>
             <span className="text-[0.875rem] text-gray-soft-500">
               Showing 1-2 of 2
