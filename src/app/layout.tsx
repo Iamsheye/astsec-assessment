@@ -1,7 +1,10 @@
-import "@/styles/globals.css";
+import DashboardSidebar from "@/components/dashboard-sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
-import { GeistSans } from "geist/font/sans";
+import "@/styles/globals.css";
 import { type Metadata } from "next";
+import { Public_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Graph Visualizer",
@@ -9,12 +12,28 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const publicSans = Public_Sans({
+  variable: "--font-publicSans",
+  subsets: ["latin"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // const { state } = useSidebar();
+
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${publicSans.className}`}>
+      <body className="">
+        <TooltipProvider delayDuration={100}>
+          <SidebarProvider>
+            <div className="flex grow">
+              <DashboardSidebar />
+              <div className="grow">{children}</div>
+            </div>
+          </SidebarProvider>
+        </TooltipProvider>
+      </body>
     </html>
   );
 }
