@@ -9,6 +9,7 @@ export default {
       boxShadow: {
         drop: "0px 1px 3px 0px #0000000D",
         bg_md: "0px 16px 18px 0px #0000000F",
+        "drop-lg": "0px 2.9px 4px 0px #0000000D",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
@@ -22,6 +23,7 @@ export default {
         "gray-soft-25": "#FAFAFA",
         "gray-soft-50": "#F0F1F3",
         "gray-soft-100": "#E0E2E7",
+        "gray-soft-200": "#C2C6CE",
         "gray-soft-400": "#858D9D",
         "gray-soft-500": "#667085",
         "gray-soft-700": "#525D73",
