@@ -5,6 +5,7 @@ import { statusColor } from "../status-legend";
 
 const ibmPlex = IBM_Plex_Mono({
   weight: "600",
+  subsets: ["latin"],
 });
 
 export const Pill = ({ color, bg }: { color: string; bg: string }) => (
