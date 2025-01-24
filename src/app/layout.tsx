@@ -1,4 +1,5 @@
 import DashboardSidebar from "@/components/dashboard-sidebar";
+import MenuBtn from "@/components/menu-btn";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         <TooltipProvider delayDuration={100}>
           <SidebarProvider>
             <div className="flex grow">
+              <MenuBtn />
               <DashboardSidebar />
               <div className="grow">{children}</div>
             </div>
