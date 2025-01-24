@@ -10,7 +10,10 @@ export default {
         drop: "0px 1px 3px 0px #0000000D",
         bg_md: "0px 16px 18px 0px #0000000F",
         "drop-lg": "0px 2.9px 4px 0px #0000000D",
+        xsm: "0px 2px 2px 2px #00000029",
+        drop_shadow: " 0px 4px 4px 0px #00000040",
       },
+
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },

@@ -1,4 +1,9 @@
+import { Inter } from "next/font/google";
 import React from "react";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 const ContextualRisk = () => {
   const CONTEXTUAL_RISK = [
@@ -13,7 +18,9 @@ const ContextualRisk = () => {
       <p className="text-[1.125rem] font-medium leading-[1.75] text-gray-soft-500">
         Contextual Risk
       </p>
-      <div className="flex flex-wrap items-center justify-between gap-2">
+      <div
+        className={`flex flex-wrap items-center justify-between gap-2 ${inter.className}`}
+      >
         <div className="flex flex-col gap-4">
           {CONTEXTUAL_RISK.map((risk) => (
             <div

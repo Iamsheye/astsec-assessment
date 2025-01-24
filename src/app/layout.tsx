@@ -20,8 +20,6 @@ const publicSans = Public_Sans({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // const { state } = useSidebar();
-
   return (
     <html lang="en" className={`${publicSans.className}`}>
       <body className="">
