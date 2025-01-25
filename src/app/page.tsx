@@ -7,10 +7,10 @@ import StatusLegend from "@/components/status-legend";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col gap-5 px-5 py-3 pb-24 tracking-[0.01em] md:flex-row md:px-9 md:py-7 md:pb-7">
+    <main className="flex min-h-screen flex-col gap-5 px-5 py-3 pb-24 tracking-[0.01em] lg:flex-row lg:px-9 lg:py-7 lg:pb-7">
       <DetailsColumn />
 
-      <div className="order-1 h-full grow overflow-y-scroll rounded-2xl bg-white px-6 py-5 shadow-drop md:order-2 md:h-[calc(100dvh-3.5rem)]">
+      <div className="order-1 h-full grow overflow-y-scroll rounded-2xl bg-white px-6 py-5 shadow-drop lg:order-2 lg:h-[calc(100dvh-3.5rem)]">
         <div className="mb-4 flex flex-col gap-4">
           <h2 className="text-[1.25rem] font-bold text-[#02983E]">
             Lorem Lorem Lorem
@@ -31,11 +31,11 @@ export default function HomePage() {
             Lorem ipsum dolor sit
           </h2>
 
-          <div className="flex flex-col flex-wrap gap-4 md:flex-row">
+          <div className="flex flex-col flex-wrap gap-4 lg:flex-row">
             <div className="grow basis-[48%]">
               <RiskTable />
             </div>
-            <div className="shadow-drop-lg flex grow basis-[48%] flex-col justify-between gap-2 rounded-[20px] border border-[#F2F3F7] bg-white px-6 py-2">
+            <div className="flex grow basis-[48%] flex-col justify-between gap-2 rounded-[20px] border border-[#F2F3F7] bg-white px-6 py-2 shadow-drop-lg">
               <ContextualRisk />
             </div>
           </div>

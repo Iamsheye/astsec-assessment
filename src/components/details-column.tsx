@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Check } from "lucide-react";
 import {
   Accordion,
@@ -7,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { AccordionTrigger } from "@radix-ui/react-accordion";
 import StacksIcon from "@/assets/stacks-icon";
+
 const DetailsColumn = () => {
   const List = [
     { value: "10/19/2017" },
@@ -26,7 +26,7 @@ const DetailsColumn = () => {
   ];
 
   return (
-    <aside className="shadow-drop order-2 h-full grow-0 overflow-y-scroll rounded-2xl bg-white px-6 py-5 md:order-1 md:h-[calc(100dvh-3.5rem)] md:basis-[31%]">
+    <aside className="order-2 h-full grow-0 overflow-y-scroll rounded-2xl bg-white px-6 py-5 shadow-drop lg:order-1 lg:h-[calc(100dvh-3.5rem)] lg:basis-[31%]">
       <div className="flex flex-col gap-3">
         <div>
           <div className="mb-8 leading-[1.375rem]">
@@ -60,7 +60,7 @@ const DetailsColumn = () => {
           </div>
         </div>
 
-        <hr className="bg-gray-soft-100 w-full" />
+        <hr className="w-full bg-gray-soft-100" />
         {List.map((item, index) => (
           <div key={index} className="flex items-center gap-5 text-[0.9375rem]">
             <p className="font-bold capitalize text-[#334155]">
@@ -72,7 +72,7 @@ const DetailsColumn = () => {
             </div>
           </div>
         ))}
-        <hr className="bg-gray-soft-100 w-full" />
+        <hr className="w-full bg-gray-soft-100" />
         <div className="flex flex-col gap-3">
           <p className="font-bold capitalize text-[#334155]">
             Lorem ipsum dolor sit
@@ -82,7 +82,7 @@ const DetailsColumn = () => {
               <AccordionItem
                 key={index}
                 value={item.title}
-                className="border-gray-soft-50 rounded-2xl border px-4 py-3"
+                className="rounded-2xl border border-gray-soft-50 px-4 py-3"
               >
                 <div>
                   <AccordionTrigger asChild>
@@ -90,20 +90,20 @@ const DetailsColumn = () => {
                       <p className="mb-3 text-[0.9375rem] font-bold text-[#030229]">
                         {item.title}
                       </p>
-                      <div className="bg-gray-soft-25 flex flex-wrap items-center gap-4 rounded-lg px-4 py-1.5 capitalize xl:flex-nowrap">
-                        <div className="border-gray-soft-400 flex items-center gap-2 xl:border-r xl:pr-4">
+                      <div className="flex flex-wrap items-center gap-4 rounded-lg bg-gray-soft-25 px-4 py-1.5 capitalize xl:flex-nowrap">
+                        <div className="flex items-center gap-2 border-gray-soft-400 xl:border-r xl:pr-4">
                           <StacksIcon />
 
                           <div>
-                            <span className="text-gray-soft-900 mb-0.5 block text-[0.75rem] font-semibold leading-[0.875em]">
+                            <span className="mb-0.5 block text-[0.75rem] font-semibold leading-[0.875em] text-gray-soft-900">
                               Server
                             </span>
-                            <span className="text-gray-soft-500 block text-[0.625rem] font-medium leading-[0/75rem]">
+                            <span className="block text-[0.625rem] font-medium leading-[0/75rem] text-gray-soft-500">
                               Server
                             </span>
                           </div>
                         </div>
-                        <p className="text-gray-soft-900 text-[0.875rem]">
+                        <p className="text-[0.875rem] text-gray-soft-900">
                           Lorem ipsum dolor sit amet consectetur.
                         </p>
                       </div>
