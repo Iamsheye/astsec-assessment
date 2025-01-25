@@ -2,7 +2,6 @@ import React from "react";
 import { Handle, Position } from "@xyflow/react";
 import StacksIcon from "@/assets/stacks-icon";
 import { ShieldCheck, ShieldX } from "lucide-react";
-import { statusColor } from "../status-legend";
 import MaskIcon from "@/assets/mask-icon";
 import {
   Popover,
@@ -14,6 +13,7 @@ import {
   ProcessNodeContent,
   EndNodeContent,
 } from "./node-content";
+import { cn } from "@/lib/utils";
 
 interface CustomNodeProps {
   data: {
@@ -36,10 +36,14 @@ const CustomNode = ({ data }: CustomNodeProps) => {
                 <StacksIcon className="h-[3.25rem] w-[3.25rem]" />
                 {data.type === "end" && (
                   <div
-                    className="absolute -right-1.5 -top-1.5 grid h-6 w-6 place-content-center rounded-full"
-                    style={{
-                      backgroundColor: statusColor(data.endStatus!),
-                    }}
+                    className={cn(
+                      "absolute -right-1.5 -top-1.5 grid h-6 w-6 place-content-center rounded-full",
+                      {
+                        "bg-[#02983E]": data.endStatus === "success",
+                        "bg-[#E5372B]": data.endStatus === "error",
+                        "bg-[#FF9500]": data.endStatus === "warning",
+                      },
+                    )}
                   >
                     {data.endStatus === "success" ? (
                       <ShieldCheck className="h-4 w-4 text-white" />

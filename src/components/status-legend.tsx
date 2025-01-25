@@ -5,17 +5,6 @@ type StatusLegendProps = {
   status: "success" | "error" | "warning";
 };
 
-export const statusColor = (status: StatusLegendProps["status"]) => {
-  switch (status) {
-    case "success":
-      return "#02983E";
-    case "error":
-      return "#E5372B";
-    case "warning":
-      return "#FF9500";
-  }
-};
-
 const StatusLegend = ({ status }: StatusLegendProps) => {
   return (
     <div className="mx-3 flex items-center gap-2">
