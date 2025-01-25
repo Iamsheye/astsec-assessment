@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,10 +29,7 @@ const ContextualRisk = () => {
               className="flex items-center gap-1 text-[1rem] leading-[1.25] text-[#383874]"
             >
               <span
-                className="h-2 w-2 rounded-full"
-                style={{
-                  backgroundColor: risk.color,
-                }}
+                className={cn("h-2 w-2 rounded-full", `bg-[${risk.color}]`)}
               ></span>
               <span className="">{risk.value}</span>
               <span className="">{risk.text}</span>
@@ -39,7 +37,11 @@ const ContextualRisk = () => {
           ))}
         </div>
 
-        <div className="h-36 w-36 rounded-full border-[8px] border-[#C6190D]"></div>
+        <div className="grid h-36 w-36 place-content-center rounded-full border-[8px] border-[#C6190D]">
+          <p className="text-[2.25rem] font-semibold leading-[1.75rem] text-[#656575]">
+            2
+          </p>
+        </div>
       </div>
     </>
   );
